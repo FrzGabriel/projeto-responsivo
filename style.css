@@ -1,0 +1,308 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+@font-face {
+    font-family: 'android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+/* paleta de cores
+#c5ebd6
+#83e1ad
+#eddc84
+#2fa866
+#1a5c37
+#063dle
+*/
+
+/*Declarando variáveis*/
+:root {
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #eddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: arial, verdana,  helvetica, sans-serif;
+    --fonte-destaque: 'Oswald', sans-serif;
+    --fonte-android: 'android', 'cursive';
+}
+
+/* (configuração global do doc todo)
+espaçamento externo
+espaçaento interno*/
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+
+/*cor de fundo
+fonte padrao*/
+body {
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+}
+
+/*classe externo depois do link
+simbolo da corrente com espaço*/
+a.externo::after {
+    content: '\00a0\1F517';
+}
+
+/*degradê de fundo do cabeçalho
+altura minima
+centralizando o texto h1 e parágrafo
+espaçamento interno do h1*/
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    min-height: 150px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+/*cor do h1 do cabeçalho
+fonte padrao do h1 do cabeçalho
+tamanho da fonte do h1 no cabeçalho
+espaçamento externo do h1 do cabeçalho*/
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    padding-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.842);
+}
+
+/*fonte padrao do parágrafo
+cor do parágrafo de dentro do cabeçalho
+tamanho da letra do parágrafo
+largura maxima do parágrafo
+largura interna esquerda do parágrafo
+largura interna direita do parágrafo
+margin aut. para centralizar */
+header > p {
+    font-family: var(--fonte-padrao);
+    color: white;
+    font-size: 1.2em;
+    max-width: 500px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+}
+
+/*cor de fundo do menu
+espaçamento interno total do menu nav
+sombra no menu nav (desloc. estendim. opacidade e cor)*/
+nav {
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.575);
+}
+
+/*cor dos links 
+espaçamento interno
+adicionando borda na cor de fundo do link
+retirar o sublinhado
+tipo de fonte (negrito)
+delay do efeito passando o mouse em cima*/
+nav > a {
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.5s;
+}
+
+/*pseudoclasse quando passar o mouse em cima altera a cor de fundo
+pseudoclasse quando passar o mouse em cima altera a cor da fonte*/
+nav > a:hover {
+    background-color: var(--cor3);
+    color: var(--cor5);
+}
+
+/*largura minima do corpo
+largura maxima do corpo
+largura de fora aut. com a confg. min e max
+espaçamento interno total do corpo
+espaçamento inferior do corpo para descolar do rodapé
+cor de fundo do corpo
+gerando sombra
+borda inferior esquerda
+borda inferior direita*/
+main {
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 15px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.575);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/*cor da fonte de todos h1 do corpo
+fonte padrao de todos h1 do corpo*/
+main > h1 {
+    color:var(--cor5);
+    font-family: var(--fonte-android);
+}
+
+/*fonte do h2 de dentro do corpo
+cor da fonte do h2
+tamanho da fonte do h2
+cor de fundo degradê
+estrofe no h2*/
+main h2 {
+    font-family: var(--fonte-android);
+    color: var(--cor5);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    text-indent: 10px;
+}
+
+/*espaçamento externo de todos os parágrafos (cima, direita, baixo, esquerda)
+organiza o texto tanto do lado direito quanto do esquerdo de dentro do corpo
+estrofe dos parágrafos de dentro do corpo
+tamanho da fonte dos parágrafos dentro do corpo
+tira o espaço entre linhas*/
+main p {
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1em;
+    line-height: 2em;
+}
+
+/*cor do conteúdo em destaque
+tipo da fonte em destaque (negrito)
+*/
+main strong {
+    color: var(--cor4);
+    font-weight: bold;
+}
+
+/*todos os links do corpo sem sublinhado
+com tipo de fonte negrito
+cor da fonte dos links
+cor de fundo dos links
+espaçamento interno dos links (cima/baixo e lateral)*/
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 6px;
+}
+
+/*quando passar o mouse em cima do link ele ganha o sublinhado
+quando passar o mouse em cima ele muda a cor*/
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor4);
+}
+
+/*largura maxima das imagens seguindo a confg. do corpo*/
+main img {
+    width: 100%;
+}
+
+/*largura máxima da foto bugdroid
+transformando ela em bloco
+espaçamento automatico para deslocar para o meio*/
+main img.pequena {
+    max-width: 350px;
+    display: block;
+    margin: auto;
+}
+
+/*div criada para editar e poder centralizar o video
+cor de fundo
+espaçamento externo total
+espaçamento baixo em porcentagem
+posição do bloco criado*/
+div.video {
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 58%;
+    position: relative;
+}
+
+/*solução para conseguir mexer no video
+posição do video
+parte de cima do video
+parte da esquerda do video
+lrgura que o video vai expandir
+tamanho que o video vai expandir
+OBS:tudo trabalhado em % se não não pega*/
+div.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+/*cor de fundo do conteúdo periférico
+espaçamento interno
+borda redonda*/
+aside {
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.514);
+}
+
+/*cor de fundo do h3
+cor da fonte
+espaçamento interno
+espaçamento externo
+bordas do h3*/
+aside > h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+/*sinal de check add
+posição dos simbolos da lista
+dividir a coluna em 2*/
+aside > ul {
+    list-style-type: '\2714\00a0\00a0';
+    list-style-position: inside;
+    columns: 2;
+}
+
+/*cor de fundo e da letra do rodapé
+cor da letra
+centralizar texto
+tamanho da fonte
+espaçamento interno*/
+footer {
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+/*cor dos links dentro do rodapé
+tipo de fonte dos links
+tirar sublinhado*/
+footer a{
+    color: var(--cor1);
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor2);
+}
